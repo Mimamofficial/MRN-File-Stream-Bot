@@ -4,24 +4,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Telegram:
-    API_ID = int(env.get("23631217"))
-    API_HASH = str(env.get("567c6df308dc6901790309499f729d12"))
+    API_ID = int(env.get("API_ID"))
+    API_HASH = str(env.get("API_HASH"))
     BOT_TOKEN = str(env.get("BOT_TOKEN"))
-    OWNER_ID = int(env.get('OWNER_ID', '6139759254'))
+    OWNER_ID = int(env.get('OWNER_ID', '8102642554'))
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
-    DATABASE_URL = str(env.get('mongodb+srv://mrnoffice692:PsO4VGHI9heKd7WA@cluster0.e7vboom.mongodb.net/?appName=Cluster0'))
-    UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "-1002761395296"))
+    DATABASE_URL = str(env.get('DATABASE_URL'))
+    UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "Mrn_Officialx"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'FileStream'))
-    FORCE_SUB_ID = env.get('-1002232443823', None)
-    FORCE_SUB = env.get('-1002761395296', None)
+    FORCE_SUB_ID = env.get('-1002761395296', None)
+    FORCE_SUB = env.get('-1002232443823', True)
     FORCE_SUB = True if str(FORCE_SUB).lower() == "true" else False
     SLEEP_THRESHOLD = int(env.get("SLEEP_THRESHOLD", "60"))
     FILE_PIC = env.get('FILE_PIC', "https://graph.org/file/5bb9935be0229adf98b73.jpg")
     START_PIC = env.get('START_PIC', "https://graph.org/file/290af25276fa34fa8f0aa.jpg")
     VERIFY_PIC = env.get('VERIFY_PIC', "https://graph.org/file/736e21cc0efa4d8c2a0e4.jpg")
     MULTI_CLIENT = False
-    FLOG_CHANNEL = int(env.get("-1002338165303", None))   # Logs channel for file logs
-    ULOG_CHANNEL = int(env.get("-1002338765286", None))   # Logs channel for user logs
+    FLOG_CHANNEL = int(env.get("FLOG_CHANNEL", None))   # Logs channel for file logs
+    ULOG_CHANNEL = int(env.get("ULOG_CHANNEL", None))   # Logs channel for user logs
     MODE = env.get("MODE", "primary")
     SECONDARY = True if MODE.lower() == "secondary" else False
     AUTH_USERS = list(set(int(x) for x in str(env.get("AUTH_USERS", "7473323779")).split()))
@@ -33,9 +33,8 @@ class Server:
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
     FQDN = str(env.get("FQDN", BIND_ADDRESS))
-    URL = "http{}://{}{}/".format(
-        "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
+    URL = "https://mrn-universe-stream-bot.koyeb.app/".format(
+        "s" if HAS_SSL else "https://mrn-universe-stream-bot.koyeb.app/", FQDN, "https://mrn-universe-stream-bot.koyeb.app/" if NO_PORT else ":" + str(PORT)
     )
-
 
 
